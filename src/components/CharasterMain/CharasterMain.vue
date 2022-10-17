@@ -2,18 +2,13 @@
       <div class="characters">
          <h2 class='characters_text'>Персонажи</h2>
          <div class='charactersgrid'>
-            <CharasterCard/>
-            <CharasterCard/>
-            <CharasterCard/>
-            <CharasterCard/>
-            <CharasterCard/>
-            <CharasterCard/>
+           <CharasterCard v-for="card in 6 " v-bind:key="card"/> 
          </div>
          <div class='pagination'>
            <button class='pagination_btn'>
              <img class='btn_arrow' src="@/assets/icon/vector.svg" alt="vector" />
            </button>
-              <span class='pagination_number'>1/3</span>
+              <span class='pagination_number'>{{nubmer}}</span>
            <button class='pagination_btn_next'>
              <img class='btn_arrow_next' src="@/assets/icon/vector.svg" alt="vector" />
            </button>
@@ -27,6 +22,11 @@ export default {
      name: 'CharasterMain',
     components: {
      CharasterCard
+    },
+    data () {
+         return {
+              nubmer: '1/3'
+         }
     }
 }
 </script>

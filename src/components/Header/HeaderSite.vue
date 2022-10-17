@@ -5,16 +5,16 @@
             KikaVoice
           </a>  
           <div class='nav_menu'>
-            <a class='charester' href="#">Персонажи</a>   
-            <a class='anime' href="#">Аниме</a>   
-            <a class='content' href="#">Контент</a>
+            <a class='charester' :href="link" >{{value[0]}}</a>   
+            <a class='anime' :href="link">{{value[1]}}</a>   
+            <a class='content' :href="link">{{value[2]}}</a>
           </div>
           <div class='btn_container'>
-             <a  href='https://t.me/KikaHOME'>
+             <a  :href="link">
               <img class="telegram_img" v-svg-inline src="@/assets/icon/telegram.svg" alt="">
              </a>
              <button  class='btn_input'><span class='input_text'>Войти</span></button>
-             <button class='btn_registration'><span class='registrationtext_text'>Регистрация</span></button>
+             <button @click="$emit('open')" class='btn_registration'><span class='registrationtext_text'>Регистрация</span></button>
           </div>
      </header>
 </div>
@@ -26,7 +26,16 @@
 export default {
       name:"HeaderSite",
       components: {
-      
+      },
+      data() {
+         return {
+               value: [
+                     'Персонажи',
+                     'Аниме',
+                     'Контент'
+               ],
+               link: 'https://t.me/KikaHOME'
+         }
       }
 }
 </script>

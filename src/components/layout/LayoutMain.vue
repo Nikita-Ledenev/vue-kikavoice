@@ -1,7 +1,7 @@
 
 <template>
      <div class="container">
-          <headerSite/>
+          <HeaderSite @open="$emit('open')"/>
           <div class='title_main'>
          <h1 class='text_main'>
            Всем Привет с вами <span class='text_hover'>Kika</span>!
@@ -14,11 +14,11 @@
 </template>
 
 <script>
-   import headerSite from '@/components/Header/HeaderSite.vue'
+   import HeaderSite from '@/components/Header/HeaderSite.vue'
 export default {
      name: 'LayoutMain',
      components: {
-     headerSite,
+     HeaderSite,
      }
 }
 </script>
